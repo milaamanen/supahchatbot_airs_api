@@ -70,6 +70,8 @@ def ScanResponse(user_input):
 conversation = [
 ]
 
+conversation.append(system_prompt)
+
 @app.route('/')
 def index():
     return render_template('index.html')
