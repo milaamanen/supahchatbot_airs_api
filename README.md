@@ -22,3 +22,5 @@ Fire up the app with "flask run -p 8080 --host=0.0.0.0"
 Detach from the screen with ctrl + a,d
 
 Now the Super Chatbot should be accessible via TCP port 8080
+
+This version is responding with JSON. JSON response is needed when you test the Prisma AIRS Red Teaming.
