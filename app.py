@@ -46,7 +46,6 @@ def ensure_session():
         session['conversation'] = []
         session['conversation'].append(system_prompt)
 
-# Modified ScanPrompt to accept and use session_id
 def ScanPrompt(user_input, session_id):
     json_object = {
         "session_id": session_id, # <-- Added session_id
@@ -66,7 +65,6 @@ def ScanPrompt(user_input, session_id):
     print("The recommended action for the prompt is: " + recommendedAction + ".")
     return recommendedAction
 
-# Modified ScanResponse to accept and use session_id
 def ScanResponse(user_input, session_id):
     json_object = {
         "session_id": session_id, # <-- Added session_id
@@ -85,7 +83,6 @@ def ScanResponse(user_input, session_id):
     print("The recommended action for the LLM reply is: " + recommendedAction + ".")
     return recommendedAction
 
-# Removed global conversation list. It's now in the session.
 
 @app.route('/')
 def index():
@@ -136,7 +133,6 @@ def chat():
                                 "response": reply,
                                 }
                     print (json_reply)
-                    # return json_reply # <-- This return was indented incorrectly in your original code
                 
                 else:
                     reply = error_for_blocked_reply # <-- Set reply to the error message
@@ -144,7 +140,6 @@ def chat():
                                 "response": error_for_blocked_reply,
                                 }
                     print (json_reply)
-                    # return json_reply # <-- This return was indented incorrectly in your original code
                 
         else:
             reply = error_for_blocked_prompt
